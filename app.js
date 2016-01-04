@@ -13,7 +13,7 @@ var db = require('./models/db');
 
 
 // Connect to Mongo on start
-db.connect('mongodb://localhost:27017/bigbootyhunt', function(err) {
+db.connect('mongodb://localhost:27017/bigtreasurehunt', function(err) {
   if (err) {
     console.log('Unable to connect to Mongo.')
     process.exit(1)
@@ -28,11 +28,13 @@ db.connect('mongodb://localhost:27017/bigbootyhunt', function(err) {
 //Added this to create a schema and an instance quiz2
 //var quiz = require('./models/quiz');
 
-mongoose.connect(
-  process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/bigtreasurehunt' // plug in the db name you've been using
-);
+//for heroku connect
+//var mongoose = require("mongoose");
+//mongoose.connect(
+//  process.env.MONGOLAB_URI ||
+//  process.env.MONGOHQ_URL ||
+//  'mongodb://localhost/bigtreasurehunt' // plug in the db name you've been using
+//);
 
 //===============================================
 
