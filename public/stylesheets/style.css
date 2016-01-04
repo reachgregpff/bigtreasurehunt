@@ -1,0 +1,176 @@
+body{
+  background-color: black;
+}
+
+#googlemap{
+  height: 100%;
+  width: 100%; 
+  position:absolute; 
+  top: 0; 
+  left: 0; 
+  z-index: 10;
+}
+
+#treasure-hunt-logo{
+  position: relative;
+  z-index: 20;
+}
+
+/* Game page  =====================================================================*/
+#quiz{
+
+}
+
+#one{
+  position: relative;
+  z-index: 20;
+}
+
+#two{
+  position: relative;
+  z-index: 20;
+}
+
+#three{
+  position: relative;
+  z-index: 20;
+}
+
+#four{
+  position: relative;
+  z-index: 20;
+}
+
+#five{
+  position: relative;
+  z-index: 20;
+}
+
+
+#backward{
+  position: relative;
+  z-index: 20;
+}
+
+#forward{
+  position: relative;
+  z-index: 20;
+}
+
+#q-n-a{
+  position: relative;
+  z-index: 20;
+}
+
+#question{
+  display: inline-block;
+  background-color: rgba(247, 239, 239, 0.75);
+  color: red;
+  height: 60px;
+}
+
+#answer{
+  border: 2px solid brown;
+}
+
+#left-arrow{
+  width: 40%;
+  z-index: 20;
+
+}
+#right-arrow{
+  width: 40%;
+  z-index: 20;
+}
+
+#submit-button{
+ background-color: orange;
+ color: black;
+ z-index: 20;
+}
+
+/*===============================================================================*/
+
+
+/* Treasure planter ======================*/
+
+#points{
+  width: 30%;
+  top: 30%;
+  left: 40%;
+  text-align: center;
+  text-shadow: 2px 2px 2px yellow;
+  font-size: 4em;
+  position: fixed;
+  z-index: 20;
+}
+
+#points-div{
+  position: fixed;
+  top: 30%;
+  left: 40%;
+  text-align: center;
+  z-index: 20;
+}
+
+#treasure{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+}
+
+#treasure-image{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+}
+
+/* Treasure planter ======================*/
+
+
+
+/* ************************Bottom stuff      */
+
+#bottom-elements{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+}
+
+#inv-1, #inv-2, #inv-3, #inv-4, #inv-5, #inv-6, #inv-7, #inv-8, #inv-9, #inv-10 {
+  position: relative;
+  z-index: 20;
+}
+
+#timer{
+  background-color: rgba(193, 113, 28, 0.65);
+  color:black;
+  font-size: 2em;
+  text-shadow: 2px 2px 0px yellow;
+}
+
+#inventory{
+  position: relative;
+  z-index: 20;
+}
+
+#score{
+  background-color: rgba(193, 113, 28, 0.65);
+  color:black;
+  font-size: 2em;
+  text-shadow: 2px 2px 0px yellow;
+}
+
+#quit{
+  background-color: red;
+  color:white;
+  font-size: 2em;
+}
+
+/*=*******************************************/
+
+
+

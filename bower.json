@@ -1,0 +1,11 @@
+{
+    "name": "treasure",
+    "version": "1.0.0",
+    "dependencies": {
+        "bootstrap": "latest",
+        "font-awesome": "latest",
+        "animate.css": "latest",
+        "modernizr": "latest",
+        "holderjs": "2.5.0"
+    }
+}
