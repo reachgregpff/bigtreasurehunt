@@ -22,19 +22,4 @@ router.get('/game', function(req, res) {
 });
 
 
-router.get('/test', function(req, res) { 
-
-  var collection = db.get().collection('quizzes');
-  collection.find({Quizname: 'Melbourne'}).toArray(function(err, docs) {
-    console.log(docs[0]);
-    // res.render('game', { title: 'Play Game' });
-
-    res.render('test', { quiz: docs[0]});
-
-  })
-
-});
-
-
-
 module.exports = router;

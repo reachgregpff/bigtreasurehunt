@@ -65,64 +65,49 @@
 </div>
 
 <!-- Bottom stuff-->
+
+
 <div  class="col-md-10" id="bottom-elements">
-  <div id="timer" class="col-md-2">
-    <center>
-      <p>[00:00:00]</p>
-    </center>
-  </div>
 
-  <div id="inventory" class="col-md-6">
-    <center>
-      <div class="row">
-        <img src="/images/numbers/1.png" id="inv-1">
-        <img src="/images/numbers/2.png" id="inv-2">
-        <img src="/images/numbers/3.png" id="inv-3">
-        <img src="/images/numbers/4.png" id="inv-4">
-        <img src="/images/numbers/5.png" id="inv-5">
-        <img src="/images/numbers/6.png" id="inv-6">
-        <img src="/images/numbers/7.png" id="inv-7">
-        <img src="/images/numbers/8.png" id="inv-8">
-        <img src="/images/numbers/9.png" id="inv-9">
-        <img src="/images/numbers/10.png" id="inv-10">
-      </div>
-    </center>
-  </div>
-
-  <div id="score" class="col-md-2">
-    <p id="score-display">SCORE: 0</p>
-  </div>
-
-  <a href = "/">
-    <div id="quit" class="col-md-1">
-      <p>QUIT</p>
+  <div class="row">
+    <div id="inventory" class="col-md-8">
+        <div class="row">
+          <img src="/images/numbers/1.png" id="inv-1">
+          <img src="/images/numbers/2.png" id="inv-2">
+          <img src="/images/numbers/3.png" id="inv-3">
+          <img src="/images/numbers/4.png" id="inv-4">
+          <img src="/images/numbers/5.png" id="inv-5">
+          <img src="/images/numbers/6.png" id="inv-6">
+          <img src="/images/numbers/7.png" id="inv-7">
+          <img src="/images/numbers/8.png" id="inv-8">
+          <img src="/images/numbers/9.png" id="inv-9">
+          <img src="/images/numbers/10.png" id="inv-10">
+        </div>
     </div>
-  </a>
+  </div>
+
+  <div class="row">
+    <div id="timer" class="col-md-3">
+      <center>
+        <p>[00:00:00]</p>
+      </center>
+    </div>
+    <div id="score" class="col-md-3">
+      <p id="score-display">SCORE: 0</p>
+    </div>
+
+    <a href = "/">
+      <div id="quit" class="col-md-1">
+        <p>QUIT</p>
+      </div>
+    </a>
+  </div>
 
 </div>
 
 
-
 <script>
-
-
-
-
-
 //-----------------Global variables-------------
-
-/* var quiz = [
-  ["Name this Melbourne's oldest hotel and pub on the corner of Flinders and Russell Streets built in 1850.", "the DUKE hotel", -37.816388, 144.969999, 20],
-  ["This Beyonce-inspired 68-storey skyscraper will be built in Melbourne city at this address", "134 SPENCER street", -37.817278, 144.953863, 20],
-  ["This coastal township in Melbourne harvests about 60 per cent of Australia's mussels.", "PORTARLINGTON", -38.114600, 144.653049, 10],
-  ["This bluestone-cobbled lane in the city has graffiti covered walls with sophisticated urban art.", "HOSIER lane", -37.816431, 144.969123, 10],
-  ["Off Flinders Lane, a block and a half from Swanston Street, the video clip to 'Long Way to the Top' was filmed. Name this lane.", "ACDC lane", -37.815540, 144.970895, 10],
-  ["The Melburnian idiom 'I'll meet you under the clocks' refers to the row of clocks at the entrance of what ...?", "FLINDERS street station", -37.817780, 144.966944, 10],
-  ["This historic world's oldest amusement park under management is more than 100 years old is located at...", "st KILDA", -37.867713, 144.976899, 5],
-  ["Australian-born Singer Kylie Minogue was raised in this Melbourne suburb", "SURREY hills", -37.826173, 145.099895, 5],
-  ["Vegemite was not only invented in Melbourne but every jar of Vegemite 'ever made' has come from the Melbourne factory at _ _ _ _ _ _ _ _ _'s bend ?", "FISHERMAN's bend", -37.826553, 144.911617, 5],
-  ["This vegetables, fruits, food and non-food destination in the city was once a cemetry and has roughly 9,000 people buried under its sheds and car park.", "queen VICTORIA market", -37.807614, 144.956806, 5]
-];  */ 
 
 var quiz = [];
 
@@ -146,7 +131,7 @@ var previousLat = null;
 var previousLng = null;
 
 
-//___________________________________________________________________________________________________________________
+//___________________________________________________________________________________________________
 
 //When the left or right arrow button is clicked
 
@@ -232,9 +217,7 @@ $('#backward').on('click', function(){
 
 
 
-//--------------------------------------------------------------------------------------------------------------
-
-
+//-----------------------------------------------------------------------------------------------
 
 
 //%%%%%%%%%%%%%%%%%%%%% check answer
@@ -459,7 +442,7 @@ $('#quit').on('click', function(){
 });
 
 
-//-------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------
 //Load googlemaps initially
 
 function shuffle(o){
@@ -510,14 +493,9 @@ $(document).ready(function(){
     // Calling the infobox function whenever the document loadsup
     markerInfoBox();
 
-
 });
 
-
-//-----------------------------------------------------------------------------------------------------------------------------
 </script>
-
-
 
 
 
