@@ -15,7 +15,7 @@ var db = require('./models/db');
 // Connect to Mongo on start
 db.connect('mongodb://localhost:27017/bigtreasurehunt', function(err) {
   if (err) {
-    console.log('Unable to connect to Mongo.')
+    console.log('Unable to connect to Mongo db says greg.')
     process.exit(1)
   } else {
     //app.listen(3000, function() {
