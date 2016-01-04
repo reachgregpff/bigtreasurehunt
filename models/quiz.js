@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost/bigbootyhunt');
+mongoose.connect('mongodb://localhost/bigtreasurehunt');
 
 
 var Schema = mongoose.Schema;
