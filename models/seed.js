@@ -1,7 +1,6 @@
 db.dropDatabase();
 
-var seedQuiz =
-
+var seedQuiz1 =
 {
     "Quizname": "Melbourne",
     "QnA": [
@@ -77,9 +76,147 @@ var seedQuiz =
       }
     ]
 
-  }
+  };
+
+var seedQuiz2 =
+{
+    "Quizname": "Landmarks1",
+    "QnA": [
+      {
+        "Question": "Based on a fairy tale by Hans Christian Andersen, this sculpture is on a rock by the waterside in Copenhagen, Denmark.",
+        "Answer": "the little MERMAID",
+        "Lat": "55.692860",
+        "Lng": "12.599304",
+        "Points": "20"
+      },
+      {
+        "Question": "Name this temple complex in Cambodia, the largest religious monument in the world, with site measuring 162.6 hectares.",
+        "Answer": "ANGKOR wat",
+        "Lat": "13.412459",
+        "Lng": "103.867007",
+        "Points": "20"
+      },
+      {
+        "Question": "On the coast of Dubai, this completed artificial island takes the form of a tree, topped by a crescent.",
+        "Answer": "PALM jumeirah",
+        "Lat": "25.113031",
+        "Lng": "55.139036",
+        "Points": "10"
+      },
+      {
+        "Question": "Name this prehistoric monument located in Wiltshire, England, the remains of a ring of standing stones set within earthworks.",
+        "Answer": "STONEHENGE",
+        "Lat": "51.178855",
+        "Lng": "-1.826204",
+        "Points": "10"
+      },
+      {
+        "Question": "98 ft tall on a 26 ft pedestal, 92 ft wide. Name this Art Deco statue in Rio de Janeiro, Brazil.",
+        "Answer": "christ the REDEEMER",
+        "Lat": "-22.951946",
+        "Lng": "-43.210455",
+        "Points": "10"
+      },
+      {
+        "Question": "Name this main building of the rebuilt World Trade Center complex in New York City, also the tallest skyscraper in USA.",
+        "Answer": "one WORLD trade center",
+        "Lat": "40.712951",
+        "Lng": "-74.013030",
+        "Points": "10"
+      },
+      {
+        "Question": "Name this  Italian Renaissance church in Vatican City, the papal enclave within the city of Rome. st PETER's basillica.",
+        "Answer": "st PETER's basillica",
+        "Lat": "41.902167",
+        "Lng": "12.453969",
+        "Points": "5"
+      },
+      {
+        "Question": "One of the 20th century's most distinctive buildings, name this multi-venue performing arts centre in Sydney, Australia.",
+        "Answer": "sydney OPERA house",
+        "Lat": "-33.856934",
+        "Lng": "151.215270",
+        "Points": "5"
+      },
+      {
+        "Question": "Name this limestone statue of a mythical creature with a lion's body and a human head on the bank of the Nile in Giza, Egypt.",
+        "Answer": "the great SPHINX",
+        "Lat": "29.975232",
+        "Lng": "31.137567",
+        "Points": "5"
+      },
+      {
+        "Question": "Name this white marble mausoleum and tomb located on the southern bank of the Yamuna River in the Indian city of Agra.",
+        "Answer": "TAJ mahal",
+        "Lat": "27.174996",
+        "Lng": "78.042155",
+        "Points": "5"
+      }
+    ]
+
+  };
 
 
-;
+var seedQuiz3 =
+{
+    "Quizname": "7NewWonders",
+    "QnA": [
+      {
+        "Question": "This pre-Columbian city at the mouth of the well of the Itza was built by the Maya people of the Terminal Classic period.",
+        "Answer": "CHICHEN itza",
+        "Lat": "20.684285",
+        "Lng": "-88.567761",
+        "Points": "20"
+      },
+      {
+        "Question": "Often mistakenly referred to as the 'Lost City of the Incas', this 15th-century Inca site located 7,970 ft above sea level.",
+        "Answer": "MACHU picchu",
+        "Lat": "-13.163162",
+        "Lng": "-72.544974",
+        "Points": "20"
+      },
+      {
+        "Question": "This is a historical and archaeological city that is famous for its rock-cut architecture and water conduit system.",
+        "Answer": "PETRA",
+        "Lat": "31.960082",
+        "Lng": "35.916028",
+        "Points": "20"
+      },
+      {
+        "Question": "This is an oval amphitheatre built of concrete and sand, and is the largest amphitheatre ever built.",
+        "Answer": "COLOSSEUM",
+        "Lat": "41.890186",
+        "Lng": "12.492231",
+        "Points": "20"
+      },
+      {
+        "Question": "98 ft tall on a 26 ft pedestal, 92 ft wide. Name this Art Deco statue in Rio de Janeiro, Brazil.",
+        "Answer": "christ the REDEEMER",
+        "Lat": "-22.951946",
+        "Lng": "-43.210455",
+        "Points": "10"
+      },
+      {
+        "Question": "Name this wonder, a series of fortifications made of stone, brick, etc, built along an east-to-west line across northern borders of China.",
+        "Answer": "great WALL of china",
+        "Lat": "40.431891",
+        "Lng": "116.570364",
+        "Points": "5"
+      },
+      {
+        "Question": "Name this white marble mausoleum and tomb located on the southern bank of the Yamuna River in the Indian city of Agra.",
+        "Answer": "TAJ mahal",
+        "Lat": "27.174996",
+        "Lng": "78.042155",
+        "Points": "5"
+      }
+    ]
 
-db.quizzes.save(seedQuiz);
+  };
+
+
+
+db.quizzes.save(seedQuiz1);
+db.quizzes.save(seedQuiz2);
+db.quizzes.save(seedQuiz3);
+

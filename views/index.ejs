@@ -1,16 +1,141 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>  
+
+    <% include partials/header %>
 
   </head>
   <body>
 
     <% include partials/scripts %>
-    <% include partials/nav %>
+    <% include partials/navbar %>
 
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide" src="/images/Carousel1-Melbourne_Skyline Aerial View_LR.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Play Game</h1>
+              <p>Online Treasure Hunt</p>
+              <p><a class="btn btn-lg btn-primary" href="#how-to-play" role="button">How to Play</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="/images/Carousel2-WallStreetNY_EN-US9293687068_1366x768.jpg" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Any Country...</h1>
+              <p>...anywhere in the world.</p>
+              <p><a class="btn btn-lg btn-primary" href="#how-to-play" role="button">How to Play</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide" src="/images/Carousel3-dubai_top_view_city_height_1920x1080_hd-wallpaper-365247.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Collect treasure...</h1>
+              <p>...win games. Compete with others.</p>
+              <p><a class="btn btn-lg btn-primary" href="#how-to-play" role="button">How to Play</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <a name="how-to-play"></a>
+    <div class="container howto" id="game-div">
+
+    <div id="how-to-div">
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="/images/how-to-game.png" width="140" height="140">
+          <h2>Choose your game</h2>
+          <p>Select a treasure hunt from available games like Melbourne, or world landmarks. Maybe build your own game in future releases of this app.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="images/how-to-qna.png" width="140" height="140">
+          <h2>Solve clues</h2>
+          <p>Answer clues to be transported to various locations on the map to complete your scavenger hunt. </p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="images/how-to-treasure.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>Gather treasure</h2>
+          <p>Gather treasure chests, bags of gold and rubies to win points, you are a winner if you uncover all treasure.</p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+    <div>
+
+      <!-- START THE FEATURETTES -->
+    <div id="about-div">
+      <a name="about"></a>
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">About this Online Treasure Hunt <span class="text-muted">...</span></h2>
+          <p class="lead">This app is an online treasure hunt that you can play from the comfort of your seat while journeying the world via maps. This application has been built with the stack - mongoDB, express and node, with HTML5, CSS3, JQuery and Javascript. And of course - Google Maps API!</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="/images/MEN.jpg" alt="mongoDB, express and node">
+        </div>
+      </div>
+  
+
+      <a name="contact"></a>
+      <hr class="featurette-divider"  id="contact-div">
+
+      </div>
+
+
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Contact me at <span class="text-muted"> ...  </span></h2>
+          <p class="lead">email: gregpff@gnail.com - Feedback and suggestions are welcome. If you need to add a game, email me clues and answers and I shall add the game. This until the next release when you can build your own game online.</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src="/images/contact.jpeg" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider" >
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2016 Greg Fernandes Inc. </p>
+      </footer>
+
+    </div><!-- /.container -->
 
 
   </body>

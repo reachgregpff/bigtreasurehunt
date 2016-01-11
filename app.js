@@ -15,8 +15,8 @@ var db = require('./models/db');
 var MONGOLAB_URI = "mongodb://heroku_r6sjd8qg:r97qc4jugld21kin2qfqpolgmq@ds035683.mongolab.com:35683/heroku_r6sjd8qg"
 
 // Connect to Mongo on start
-//db.connect('mongodb://localhost:27017/bigtreasurehunt', function(err) {  //if testing on local laptop only
-db.connect( (MONGOLAB_URI || 'mongodb://localhost:27017/bigtreasurehunt'), function(err) {    // this line is for heroku hosting and connecting to Mongolab, and connects to localhost if not running on heroku
+db.connect('mongodb://localhost:27017/bigtreasurehunt', function(err) {  //if testing on local laptop only
+//db.connect( (MONGOLAB_URI || 'mongodb://localhost:27017/bigtreasurehunt'), function(err) {    // this line is for heroku hosting and connecting to Mongolab, and connects to localhost if not running on heroku
   if (err) {
     console.log('Unable to connect to Mongo db says greg.')
     process.exit(1)

@@ -11,10 +11,14 @@ router.get('/', function(req, res, next) {
 
 /* GET newroute page. */
 var db = require('../models/db')
-router.get('/game', function(req, res) { 
+router.get('/game/:gameid', function(req, res) { 
+
+  //console.log(req.params.gameid);
+  var gameName = req.params.gameid;
 
   var collection = db.get().collection('quizzes');
-  collection.find({Quizname: 'Melbourne'}).toArray(function(err, docs) {
+  //console.log(collection);
+  collection.find({Quizname: gameName}).toArray(function(err, docs) {
     //console.log(docs[0]);
     res.render('game', { quiz: docs[0] });
   })

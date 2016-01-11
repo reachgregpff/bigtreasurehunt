@@ -2,6 +2,9 @@
 
 <script type='text/javascript'>
   var quizData =<%-JSON.stringify(quiz)%>
+  var quizLength = quizData.QnA.length;
+  //console.log(quizLength);
+
 </script>
 
 <!-- Google Maps API -->
@@ -14,7 +17,7 @@
 
 <div class="wrapper">
     <center>
-      <img id="treasure-hunt-logo" src="images/Treasure-Hunt.png" alt="">
+      <img id="treasure-hunt-logo" src="/images/Treasure-Hunt.png" alt="">
     </center>
 
 
@@ -72,16 +75,10 @@
   <div class="row">
     <div id="inventory" class="col-md-8">
         <div class="row">
-          <img src="/images/numbers/1.png" id="inv-1">
-          <img src="/images/numbers/2.png" id="inv-2">
-          <img src="/images/numbers/3.png" id="inv-3">
-          <img src="/images/numbers/4.png" id="inv-4">
-          <img src="/images/numbers/5.png" id="inv-5">
-          <img src="/images/numbers/6.png" id="inv-6">
-          <img src="/images/numbers/7.png" id="inv-7">
-          <img src="/images/numbers/8.png" id="inv-8">
-          <img src="/images/numbers/9.png" id="inv-9">
-          <img src="/images/numbers/10.png" id="inv-10">
+        <% 
+          for (var i=0; i < quiz.QnA.length; i++) { %>
+          <img src="/images/numbers/<%=i+1%>.png" id="inv-<%=i+1%>">
+        <% } %>
         </div>
     </div>
   </div>
@@ -139,7 +136,7 @@ function change_question(q_no, direction){
 
     $("#user-answer").val("");
     
-    if((q_no === 10 && direction === "forward") || (q_no === 1 && direction === "backward")){ 
+    if((q_no === quizLength && direction === "forward") || (q_no === 1 && direction === "backward")){ 
       return;
     } else{
       if( direction === "forward"){
@@ -409,7 +406,7 @@ function checkAnswer(answer){
       $treasure = $('#treasure-image');
       var treasureSave = $treasure.attr('src');
 
-      if(correctAnswerCount == 10) {
+      if(correctAnswerCount == quizLength) {
         $treasure.attr('src', "/images/winner.png");
       } else{
         $treasure.attr('src', "");
