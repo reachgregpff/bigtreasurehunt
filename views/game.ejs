@@ -86,7 +86,7 @@
   <div class="row">
     <div id="timer" class="col-md-3">
       <center>
-        <p>[00:00:00]</p>
+        <p id="timer-text">00:00:00</p>
       </center>
     </div>
     <div id="score" class="col-md-3">
@@ -127,6 +127,56 @@ var correctAnswerCount = 0;
 var previousLat = null;
 var previousLng = null;
 
+
+// Code for stopwatch
+
+var timer = null;
+
+function startTimer(){
+
+  timer = setInterval(function() {
+
+    // Do something after 1 second
+    time = $('#timer-text').text();
+    time = time.split(':');
+    second = parseInt(time.pop());
+    minute = parseInt(time.pop());
+    hour = parseInt(time.pop());
+
+    if(second === 59){
+      second = 0;
+      if(minute === 59){
+        minute = 0;
+        hour++;
+        
+      }else{
+        minute++;
+        
+      }
+    } else {
+      second++;
+      
+    }
+
+    if(hour < 10){
+      hour = "0" + hour;
+    }
+
+    if(minute <10){
+      minute = "0" + minute;
+    }
+    if(second <10){
+      second = "0" + second;
+    }
+
+    
+    //console.log(hour + ":" + minute + ":" + second);
+    time = hour + ":" + minute + ":" + second;
+    $('#timer-text').text(time);
+
+    }, 1000);
+
+}
 
 //___________________________________________________________________________________________________
 
@@ -408,6 +458,7 @@ function checkAnswer(answer){
 
       if(correctAnswerCount == quizLength) {
         $treasure.attr('src', "/images/winner.png");
+        clearInterval(timer);       //stop the timer
       } else{
         $treasure.attr('src', "");
       }
@@ -449,9 +500,9 @@ function shuffle(o){
 
 $(document).ready(function(){
 
-  console.log("in document ready");
-
   $('#main-menu').hide();
+
+  startTimer();   //start the timer
 
   quiz = shuffle(quiz);  //shuffle the array
 
@@ -466,29 +517,81 @@ $(document).ready(function(){
     content: data
   });
 
-    map = new google.maps.Map($('#googlemap')[0], {
+
+  var myLat = null;
+  var myLng = null;
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      myLat = pos.lat;
+      myLng = pos.lng; 
+
+      map.setCenter(pos);
+
+      myLat = position.coords.latitude;
+      myLng = position.coords.longitude;
+
+      // console.log( " 1 lat:" + myLat + " myLng: " + myLng); 
+
+    }, function() {
+      var infoWindow = new google.maps.InfoWindow({map: map});
+      handleLocationError(true, infoWindow, map.getCenter());
+    }); 
+  }
+
+  map = new google.maps.Map($('#googlemap')[0], {
         zoom: 16,
-        center: { lat: -37.817954, lng: 144.959257},
+        center: { lat: -37.8856466, lng: 145.1651898},
         styles: [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"administrative.locality","elementType":"geometry","stylers":[{"visibility":"off"},{"color":"#d6bc68"}]},{"featureType":"landscape","elementType":"all","stylers":[{"visibility":"on"},{"color":"#e7cd79"},{"weight":0.1}]},{"featureType":"landscape.natural.landcover","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#d6bc68"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"on"},{"color":"#d6bc68"}]},{"featureType":"poi.attraction","elementType":"geometry","stylers":[{"visibility":"off"},{"color":"#cfb665"}]},{"featureType":"poi.business","elementType":"all","stylers":[{"color":"#e9d9a6"},{"visibility":"on"}]},{"featureType":"poi.government","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.medical","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.school","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.sports_complex","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"simplified"},{"color":"#e9d9a6"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"visibility":"off"},{"weight":1},{"color":"#e9d9a6"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"simplified"},{"color":"#e9d9a6"}]},{"featureType":"road.highway","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"road.highway.controlled_access","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#d6bc68"}]},{"featureType":"road.arterial","elementType":"labels.text.stroke","stylers":[{"color":"#cfb665"},{"visibility":"off"}]},{"featureType":"transit.line","elementType":"all","stylers":[{"color":"#d6bc68"},{"visibility":"on"}]},{"featureType":"transit.station.airport","elementType":"geometry.fill","stylers":[{"visibility":"off"},{"color":"#d6bc68"}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"simplified"},{"color":"#282828"}]}]
     });
 
     // console.log(map);
 
     var marker = new google.maps.Marker({
-        position: {lat: -37.817954, lng: 144.959257},
+        position: {lat: -37.8856466, lng: 145.1651898},
         map: map,
         //icon: "/images/you-are-here.png",
         //animation: google.maps.Animation.DROP,
         title: "Treasure Hunt"
-    })
+    });
 
     // adds it to the infobox to this functions
     var markerInfoBox = function () {
         infowindow.open(map,marker);
-    }
+    };
 
     // Calling the infobox function whenever the document loadsup
-    markerInfoBox();
+    markerInfoBox();  
+
+    /*if (navigator.geolocation) {
+      // console.log("Input location in NEARBY: " + location + " HERE");
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        map.setCenter(pos);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: pos,
+            //icon: '/marker-star-3.png'
+        });
+        // console.log("LatLng of Nearby: " + pos);
+        myLat = position.coords.latitude;
+        myLong = position.coords.longitude;
+        showBars();
+      }, function() {
+        var infoWindow = new google.maps.InfoWindow({map: map});
+        handleLocationError(true, infoWindow, map.getCenter());
+      });
+    } */
+
+    
 
 });
 
