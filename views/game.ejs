@@ -477,6 +477,17 @@ function checkAnswer(answer){
     $('#submit-button').attr('disabled', 'disabled');
     $('#question').css('color', 'green');
 
+  } else {
+
+    $('#points').html( "WRONG ANSWER" );
+
+    setTimeout(function(){
+
+      //display points
+      $('#points').html("");
+
+    }, 2000);
+
   }
 
 }
